@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "update-types:db": "npx openapi-typescript \"https://bckheqsoycpxchnkzoea.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJja2hlcXNveWNweGNobmt6b2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjIzNTcyMzcsImV4cCI6MTk3NzkzMzIzN30.A74oGWiI3YVAaivVhxffcH6u6FvmVNYaHfuTdwVHx1Q\" --version=2 --output types/database.ts",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
   "dependencies": {
@@ -16,9 +17,11 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "@supabase/supabase-js": "^1.35.6",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-query": "^3.39.2"
   },
   "devDependencies": {
     "@types/node": "latest",
