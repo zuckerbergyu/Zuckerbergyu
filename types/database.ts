@@ -108,6 +108,105 @@ export interface paths {
       };
     };
   };
+  "/Career": {
+    get: {
+      parameters: {
+        query: {
+          company?: parameters["rowFilter.Career.company"];
+          title?: parameters["rowFilter.Career.title"];
+          period?: parameters["rowFilter.Career.period"];
+          description?: parameters["rowFilter.Career.description"];
+          link?: parameters["rowFilter.Career.link"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["Career"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** Career */
+          Career?: definitions["Career"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          company?: parameters["rowFilter.Career.company"];
+          title?: parameters["rowFilter.Career.title"];
+          period?: parameters["rowFilter.Career.period"];
+          description?: parameters["rowFilter.Career.description"];
+          link?: parameters["rowFilter.Career.link"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          company?: parameters["rowFilter.Career.company"];
+          title?: parameters["rowFilter.Career.title"];
+          period?: parameters["rowFilter.Career.period"];
+          description?: parameters["rowFilter.Career.description"];
+          link?: parameters["rowFilter.Career.link"];
+        };
+        body: {
+          /** Career */
+          Career?: definitions["Career"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
 }
 
 export interface definitions {
@@ -124,6 +223,25 @@ export interface definitions {
     description?: string;
     /** Format: boolean */
     favorite?: boolean;
+  };
+  Career: {
+    /**
+     * Format: text
+     * @default
+     */
+    company: string;
+    /** Format: text */
+    title?: string;
+    /**
+     * Format: text
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    period: string;
+    /** Format: text */
+    description?: string;
+    /** Format: json */
+    link?: unknown;
   };
 }
 
@@ -170,6 +288,18 @@ export interface parameters {
   "rowFilter.Skills.description": string;
   /** Format: boolean */
   "rowFilter.Skills.favorite": string;
+  /** @description Career */
+  "body.Career": definitions["Career"];
+  /** Format: text */
+  "rowFilter.Career.company": string;
+  /** Format: text */
+  "rowFilter.Career.title": string;
+  /** Format: text */
+  "rowFilter.Career.period": string;
+  /** Format: text */
+  "rowFilter.Career.description": string;
+  /** Format: json */
+  "rowFilter.Career.link": string;
 }
 
 export interface operations {}

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Box } from "@mui/material";
 import Skills from "./Skills";
+import Career from "./Career";
 import Projects from "./Projects";
 
 // interface SomeType {}
@@ -9,6 +10,7 @@ const Body = () => {
   return (
     <Box sx={styles.root}>
       <Skills />
+      <Career />
     </Box>
   );
 };

@@ -15,3 +15,15 @@ export const getSkillList = async (): Promise<
   return data;
 };
 export const useGetSkillList = () => useQuery(["Skills"], () => getSkillList());
+
+export const getCareer = async (): Promise<definitions["Career"][] | null> => {
+  const { data, error } = await supabase
+    .from<definitions["Career"]>("Career")
+    .select("*");
+  // .order("id", { ascending: false });
+  if (error) {
+    return [];
+  }
+  return data;
+};
+export const useGetCareer = () => useQuery(["Career"], () => getCareer());

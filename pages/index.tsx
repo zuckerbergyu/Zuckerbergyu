@@ -6,7 +6,7 @@ import Body from "../components/Body";
 
 const Home: NextPage = () => {
   return (
-    <Container disableGutters maxWidth="lg">
+    <Container disableGutters maxWidth="sm">
       <div
         style={{
           height: 300,

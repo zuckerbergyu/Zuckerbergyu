@@ -48,6 +48,7 @@ const NavTabs = (props: LinkTabProps) => {
         // }}
       >
         <LinkTab label="기술 스택" href="Skills" />
+        <LinkTab label="경력" href="Career" />
       </Tabs>
     </Box>
   );
