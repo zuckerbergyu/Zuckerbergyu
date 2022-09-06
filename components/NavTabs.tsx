@@ -41,11 +41,7 @@ const NavTabs = (props: LinkTabProps) => {
         variant="scrollable"
         scrollButtons="auto"
         aria-label="navi-tabs"
-        // ---
         sx={styles.tabs}
-        // TabIndicatorProps={{
-        //   sx: styles.tabs,
-        // }}
       >
         <LinkTab label="기술 스택" href="Skills" />
         <LinkTab label="경력" href="Career" />
@@ -60,14 +56,10 @@ const styles = {
   },
   tabs: {
     background: "rgba(22, 23, 29, 1)",
-    "&.Mui-selected": {
-      background: "red",
-      color: "white",
-    },
   },
   tab: {
-    color: "black",
-    textColor: "black",
+    color: "gray",
+    fontWeight: 700,
     "&.Mui-selected": {
       color: "white",
     },
