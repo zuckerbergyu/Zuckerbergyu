@@ -8,7 +8,6 @@ export const getSkillList = async (): Promise<
   const { data, error } = await supabase
     .from<definitions["Skills"]>("Skills")
     .select("*");
-  // .order("id", { ascending: false });
   if (error) {
     return [];
   }
@@ -19,8 +18,8 @@ export const useGetSkillList = () => useQuery(["Skills"], () => getSkillList());
 export const getCareer = async (): Promise<definitions["Career"][] | null> => {
   const { data, error } = await supabase
     .from<definitions["Career"]>("Career")
-    .select("*");
-  // .order("id", { ascending: false });
+    .select("*")
+    .order("id", { ascending: false });
   if (error) {
     return [];
   }

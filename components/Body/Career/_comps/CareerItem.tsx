@@ -22,18 +22,22 @@ const CareerItem = (props: Props) => {
       <Typography sx={styles.company}>{props.item.period}</Typography>
       <Typography sx={styles.description}>{props.item.description}</Typography>
       <Box sx={styles.linkRoot}>
-        {linkList.map((item: any) => {
-          return (
-            <Typography
-              onClick={() => {
-                item.link && window.open(item.link, "_blank");
-              }}
-              sx={styles.link}
-            >
-              {item.linkName}
-            </Typography>
-          );
-        })}
+        {linkList
+          ? linkList.map((item: any) => {
+              return (
+                item.linkName && (
+                  <Typography
+                    onClick={() => {
+                      item.link && window.open(item.link, "_blank");
+                    }}
+                    sx={styles.link}
+                  >
+                    {item.linkName}
+                  </Typography>
+                )
+              );
+            })
+          : null}
       </Box>
     </Box>
   );
@@ -68,9 +72,10 @@ const styles = {
   linkRoot: {
     display: "flex",
     flexDirection: "row",
+    flexWrap: "wrap",
   },
   link: {
-    marginRight: "10px",
+    margin: "0 10px 5px 0px",
     fontSize: ".75rem",
     color: "rgba(95, 95, 95, 1)",
     padding: "3px 5px",

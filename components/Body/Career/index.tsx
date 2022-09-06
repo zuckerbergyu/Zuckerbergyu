@@ -29,7 +29,6 @@ const styles = {
     padding: "40px 0",
     display: "flex",
     flexDirection: "column",
-    height: 800,
   },
 };
 export default Carrer;

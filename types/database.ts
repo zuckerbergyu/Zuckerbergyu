@@ -117,6 +117,7 @@ export interface paths {
           period?: parameters["rowFilter.Career.period"];
           description?: parameters["rowFilter.Career.description"];
           link?: parameters["rowFilter.Career.link"];
+          id?: parameters["rowFilter.Career.id"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -172,6 +173,7 @@ export interface paths {
           period?: parameters["rowFilter.Career.period"];
           description?: parameters["rowFilter.Career.description"];
           link?: parameters["rowFilter.Career.link"];
+          id?: parameters["rowFilter.Career.id"];
         };
         header: {
           /** Preference */
@@ -191,6 +193,7 @@ export interface paths {
           period?: parameters["rowFilter.Career.period"];
           description?: parameters["rowFilter.Career.description"];
           link?: parameters["rowFilter.Career.link"];
+          id?: parameters["rowFilter.Career.id"];
         };
         body: {
           /** Career */
@@ -232,16 +235,19 @@ export interface definitions {
     company: string;
     /** Format: text */
     title?: string;
-    /**
-     * Format: text
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     */
+    /** Format: text */
     period: string;
     /** Format: text */
     description?: string;
     /** Format: json */
     link?: unknown;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default 0
+     */
+    id: number;
   };
 }
 
@@ -300,6 +306,8 @@ export interface parameters {
   "rowFilter.Career.description": string;
   /** Format: json */
   "rowFilter.Career.link": string;
+  /** Format: integer */
+  "rowFilter.Career.id": string;
 }
 
 export interface operations {}
