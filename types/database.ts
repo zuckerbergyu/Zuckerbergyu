@@ -108,6 +108,99 @@ export interface paths {
       };
     };
   };
+  "/Github": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Github.id"];
+          link?: parameters["rowFilter.Github.link"];
+          thumbNail?: parameters["rowFilter.Github.thumbNail"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["Github"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** Github */
+          Github?: definitions["Github"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Github.id"];
+          link?: parameters["rowFilter.Github.link"];
+          thumbNail?: parameters["rowFilter.Github.thumbNail"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Github.id"];
+          link?: parameters["rowFilter.Github.link"];
+          thumbNail?: parameters["rowFilter.Github.thumbNail"];
+        };
+        body: {
+          /** Github */
+          Github?: definitions["Github"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/Career": {
     get: {
       parameters: {
@@ -227,6 +320,24 @@ export interface definitions {
     /** Format: boolean */
     favorite?: boolean;
   };
+  Github: {
+    /**
+     * Format: bigint
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    id: number;
+    /**
+     * Format: text
+     * @default
+     */
+    link?: string;
+    /**
+     * Format: text
+     * @default
+     */
+    thumbNail?: string;
+  };
   Career: {
     /**
      * Format: text
@@ -294,6 +405,14 @@ export interface parameters {
   "rowFilter.Skills.description": string;
   /** Format: boolean */
   "rowFilter.Skills.favorite": string;
+  /** @description Github */
+  "body.Github": definitions["Github"];
+  /** Format: bigint */
+  "rowFilter.Github.id": string;
+  /** Format: text */
+  "rowFilter.Github.link": string;
+  /** Format: text */
+  "rowFilter.Github.thumbNail": string;
   /** @description Career */
   "body.Career": definitions["Career"];
   /** Format: text */

@@ -26,3 +26,15 @@ export const getCareer = async (): Promise<definitions["Career"][] | null> => {
   return data;
 };
 export const useGetCareer = () => useQuery(["Career"], () => getCareer());
+
+export const getGithub = async (): Promise<definitions["Github"][] | null> => {
+  const { data, error } = await supabase
+    .from<definitions["Github"]>("Github")
+    .select("*")
+    .order("id", { ascending: false });
+  if (error) {
+    return [];
+  }
+  return data;
+};
+export const useGetGithub = () => useQuery(["Github"], () => getGithub());

@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 const Header = () => {
   return (
     <Box sx={styles.root}>
+      <img style={styles.img} src={"face.jpg"} />
       <Typography sx={styles.title}>4년차 개발자 입니다</Typography>
       <Typography sx={styles.name}>이세규</Typography>
       <Box sx={styles.tagRoot}>
@@ -38,14 +39,23 @@ const styles = {
     justifyContent: "center",
     padding: "20px 0 20px 0",
   },
+  img: {
+    width: 160,
+    height: 160,
+    borderRadius: "50%",
+    marginBottom: "10px",
+    filter: "drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.9))",
+  },
   name: {
     fontSize: "2.2rem",
     fontWeight: 700,
+    marginBottom: "4px",
     color: "rgba(255, 255, 255)",
   },
   title: {
     fontSize: "1rem",
     fontWeight: 400,
+    marginBottom: "4px",
     color: "gray",
   },
   tagRoot: {

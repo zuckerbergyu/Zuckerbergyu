@@ -11,7 +11,6 @@ import { useGetCareer } from "../../../api";
 
 const Carrer = (): JSX.Element => {
   const { data: career } = useGetCareer();
-  console.log(career);
 
   return career ? (
     <Box sx={styles.root} id={"Career"}>

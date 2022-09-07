@@ -2,6 +2,7 @@ import * as React from "react";
 import { Box } from "@mui/material";
 import Skills from "./Skills";
 import Career from "./Career";
+import Github from "./Github";
 import Projects from "./Projects";
 
 // interface SomeType {}
@@ -11,6 +12,7 @@ const Body = () => {
     <Box sx={styles.root}>
       <Skills />
       <Career />
+      <Github />
     </Box>
   );
 };
