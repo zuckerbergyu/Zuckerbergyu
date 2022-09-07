@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import SectionTitle from "../../SectionTitle";
 import AboutMeItem from "./_comps/AboutMeItem";
 import { useGetAboutMe } from "../../../api";
@@ -20,11 +20,15 @@ const AboutMe = (): JSX.Element => {
   return aboutMe ? (
     <Box sx={styles.root} id={"AboutMe"}>
       <SectionTitle title={"자기 소개"} />
-
-      <Box sx={{ color: "white" }}>여기에 적당한 말을 적는다</Box>
-      {aboutMe.map((item) => (
-        <AboutMeItem item={item} />
-      ))}
+      <Box sx={styles.contentsRoot}>
+        <Typography sx={styles.simpleAbout}>
+          간단한 자기소개를 쓰는곳입니다.간단한 자기소개글을 쓰는곳입니다.간단한
+          소개글을 쓰는곳입니다.
+        </Typography>
+        {aboutMe.map((item) => (
+          <AboutMeItem item={item} />
+        ))}
+      </Box>
     </Box>
   ) : (
     <></>
@@ -32,9 +36,16 @@ const AboutMe = (): JSX.Element => {
 };
 const styles = {
   root: {
-    padding: "40px 0",
     display: "flex",
     flexDirection: "column",
+  },
+  contentsRoot: {
+    padding: "30px 0px 10px 0px",
+  },
+  simpleAbout: {
+    fontSize: "1.2rem",
+    color: "white",
+    marginBottom: "60px",
   },
 };
 export default AboutMe;

@@ -9,7 +9,7 @@ type Props = {
 
 const AboutMeItem = (props: Props) => {
   console.log(props.item.title);
-  let arr: Array<string> = props.item.contents.split(",");
+  let arr: Array<string> = props.item.contents.split("/");
   return (
     <Box sx={styles.root}>
       <Typography sx={styles.title}>{props.item.title}</Typography>
@@ -22,14 +22,19 @@ const AboutMeItem = (props: Props) => {
   );
 };
 const styles = {
-  root: {},
+  root: {
+    margin: "60px 0",
+  },
   title: {
-    fontSzie: "2rem",
     color: "white",
+    fontSize: "22px",
+    fontWeight: "500",
     marginBottom: "16px",
   },
   contents: {
-    color: "white",
+    color: "rgba(255, 255, 255, 0.45)",
+    fontSize: "19px",
+    padding: 12,
   },
 };
 

@@ -45,7 +45,7 @@ export const getAboutMe = async (): Promise<
   const { data, error } = await supabase
     .from<definitions["AboutMe"]>("AboutMe")
     .select("*")
-    .order("id", { ascending: false });
+    .order("id", { ascending: true });
   if (error) {
     return [];
   }
