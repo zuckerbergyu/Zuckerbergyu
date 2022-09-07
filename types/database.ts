@@ -303,6 +303,99 @@ export interface paths {
       };
     };
   };
+  "/AboutMe": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.AboutMe.id"];
+          title?: parameters["rowFilter.AboutMe.title"];
+          contents?: parameters["rowFilter.AboutMe.contents"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["AboutMe"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** AboutMe */
+          AboutMe?: definitions["AboutMe"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.AboutMe.id"];
+          title?: parameters["rowFilter.AboutMe.title"];
+          contents?: parameters["rowFilter.AboutMe.contents"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.AboutMe.id"];
+          title?: parameters["rowFilter.AboutMe.title"];
+          contents?: parameters["rowFilter.AboutMe.contents"];
+        };
+        body: {
+          /** AboutMe */
+          AboutMe?: definitions["AboutMe"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
 }
 
 export interface definitions {
@@ -359,6 +452,24 @@ export interface definitions {
      * @default 0
      */
     id: number;
+  };
+  AboutMe: {
+    /**
+     * Format: bigint
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    id: number;
+    /**
+     * Format: text
+     * @default
+     */
+    title?: string;
+    /**
+     * Format: text
+     * @default
+     */
+    contents: string;
   };
 }
 
@@ -427,6 +538,14 @@ export interface parameters {
   "rowFilter.Career.link": string;
   /** Format: integer */
   "rowFilter.Career.id": string;
+  /** @description AboutMe */
+  "body.AboutMe": definitions["AboutMe"];
+  /** Format: bigint */
+  "rowFilter.AboutMe.id": string;
+  /** Format: text */
+  "rowFilter.AboutMe.title": string;
+  /** Format: text */
+  "rowFilter.AboutMe.contents": string;
 }
 
 export interface operations {}

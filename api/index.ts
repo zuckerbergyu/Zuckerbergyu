@@ -38,3 +38,17 @@ export const getGithub = async (): Promise<definitions["Github"][] | null> => {
   return data;
 };
 export const useGetGithub = () => useQuery(["Github"], () => getGithub());
+
+export const getAboutMe = async (): Promise<
+  definitions["AboutMe"][] | null
+> => {
+  const { data, error } = await supabase
+    .from<definitions["AboutMe"]>("AboutMe")
+    .select("*")
+    .order("id", { ascending: false });
+  if (error) {
+    return [];
+  }
+  return data;
+};
+export const useGetAboutMe = () => useQuery(["AboutMe"], () => getAboutMe());
