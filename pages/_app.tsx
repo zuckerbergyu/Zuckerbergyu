@@ -2,6 +2,7 @@ import * as React from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
+import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../src/theme";
@@ -27,9 +28,42 @@ export default function MyApp(props: MyAppProps) {
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Component {...pageProps} />
+          <Box sx={styles.background} />
+          <Box sx={styles.component}>
+            <Component {...pageProps} />
+          </Box>
         </ThemeProvider>
       </QueryClientProvider>
     </CacheProvider>
   );
 }
+
+const styles = {
+  background: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundImage: {
+      xs: "none",
+      sm: 'url("https://static.getraffle.io/service-resources/images/background.png")',
+    },
+    backgroundSize: "cover",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  component: {
+    maxWidth: { sm: 440, xs: "auto" },
+    width: "100%",
+    height: "100%",
+    bottom: 0,
+    margin: {
+      sm: "auto",
+      md: "auto",
+      lg: "0 0 0 calc(50vw - 1px)",
+    },
+    position: { xs: "static", sm: "relative" },
+  },
+};
