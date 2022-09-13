@@ -4,10 +4,7 @@ import Skills from "./Skills";
 import Career from "./Career";
 import Github from "./Github";
 import AboutMe from "./AboutMe";
-import Projects from "./Projects";
 import Education from "./Education";
-
-// interface SomeType {}
 
 const Body = () => {
   return (

@@ -47,7 +47,11 @@ const styles = {
     bottom: 0,
     backgroundImage: {
       xs: "none",
-      sm: 'url("https://static.getraffle.io/service-resources/images/background.png")',
+      sm: 'url("https://bckheqsoycpxchnkzoea.supabase.co/storage/v1/object/public/service-resources/background/fisherman-4343089_1280.png")',
+    },
+    backgroundColor: {
+      xs: "none",
+      sm: "rgba(41, 44, 54, 0.985)",
     },
     backgroundSize: "cover",
     display: "flex",

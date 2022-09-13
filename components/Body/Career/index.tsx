@@ -4,11 +4,6 @@ import CareerItem from "./_comps/CareerItem";
 import SectionTitle from "../../SectionTitle";
 import { useGetCareer } from "../../../api";
 
-/**
- *
- *
- */
-
 const Carrer = (): JSX.Element => {
   const { data: career } = useGetCareer();
 

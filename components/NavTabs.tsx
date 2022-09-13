@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Box, Tabs, Tab } from "@mui/material";
-// https://mui.com/#fixed-placement
 
 interface LinkTabProps {
   label?: string;
