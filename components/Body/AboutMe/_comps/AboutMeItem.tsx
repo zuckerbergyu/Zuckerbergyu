@@ -8,7 +8,6 @@ type Props = {
 };
 
 const AboutMeItem = (props: Props) => {
-  console.log(props.item.title);
   let arr: Array<string> = props.item.contents.split("/");
   return (
     <Box sx={styles.root}>

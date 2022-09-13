@@ -68,6 +68,6 @@ const styles = {
       md: "auto",
       lg: "0 0 0 calc(50vw - 1px)",
     },
-    position: { xs: "static", sm: "relative" },
+    position: { xs: "relative", sm: "relative" },
   },
 };
