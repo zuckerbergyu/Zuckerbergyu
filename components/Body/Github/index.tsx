@@ -32,6 +32,8 @@ const styles = {
   img: {
     borderRadius: "10px",
     marginBottom: "16px",
+    width: "100%",
+    height: "100%",
   },
 };
 export default Github;
