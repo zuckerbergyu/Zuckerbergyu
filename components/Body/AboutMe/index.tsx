@@ -37,6 +37,7 @@ const AboutMe = (): JSX.Element => {
 const styles = {
   root: {
     display: "flex",
+    padding: "40px 0",
     flexDirection: "column",
   },
   contentsRoot: {

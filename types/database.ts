@@ -396,6 +396,105 @@ export interface paths {
       };
     };
   };
+  "/Education": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Education.id"];
+          school?: parameters["rowFilter.Education.school"];
+          class?: parameters["rowFilter.Education.class"];
+          period?: parameters["rowFilter.Education.period"];
+          period_?: parameters["rowFilter.Education.period_"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["Education"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** Education */
+          Education?: definitions["Education"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Education.id"];
+          school?: parameters["rowFilter.Education.school"];
+          class?: parameters["rowFilter.Education.class"];
+          period?: parameters["rowFilter.Education.period"];
+          period_?: parameters["rowFilter.Education.period_"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Education.id"];
+          school?: parameters["rowFilter.Education.school"];
+          class?: parameters["rowFilter.Education.class"];
+          period?: parameters["rowFilter.Education.period"];
+          period_?: parameters["rowFilter.Education.period_"];
+        };
+        body: {
+          /** Education */
+          Education?: definitions["Education"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
 }
 
 export interface definitions {
@@ -470,6 +569,34 @@ export interface definitions {
      * @default
      */
     contents: string;
+  };
+  Education: {
+    /**
+     * Format: bigint
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    id: number;
+    /**
+     * Format: text
+     * @default
+     */
+    school?: string;
+    /**
+     * Format: text
+     * @default
+     */
+    class?: string;
+    /**
+     * Format: text
+     * @default
+     */
+    period?: string;
+    /**
+     * Format: text
+     * @default
+     */
+    period_?: string;
   };
 }
 
@@ -546,6 +673,18 @@ export interface parameters {
   "rowFilter.AboutMe.title": string;
   /** Format: text */
   "rowFilter.AboutMe.contents": string;
+  /** @description Education */
+  "body.Education": definitions["Education"];
+  /** Format: bigint */
+  "rowFilter.Education.id": string;
+  /** Format: text */
+  "rowFilter.Education.school": string;
+  /** Format: text */
+  "rowFilter.Education.class": string;
+  /** Format: text */
+  "rowFilter.Education.period": string;
+  /** Format: text */
+  "rowFilter.Education.period_": string;
 }
 
 export interface operations {}

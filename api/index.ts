@@ -52,3 +52,18 @@ export const getAboutMe = async (): Promise<
   return data;
 };
 export const useGetAboutMe = () => useQuery(["AboutMe"], () => getAboutMe());
+
+export const getEducation = async (): Promise<
+  definitions["Education"][] | null
+> => {
+  const { data, error } = await supabase
+    .from<definitions["Education"]>("Education")
+    .select("*")
+    .order("id", { ascending: true });
+  if (error) {
+    return [];
+  }
+  return data;
+};
+export const useGetEducation = () =>
+  useQuery(["Education"], () => getEducation());
