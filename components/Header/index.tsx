@@ -12,7 +12,7 @@ const Header = () => {
         <Typography
           sx={styles.tag}
           onClick={() => {
-            window.open("tel:010-2274-0450");
+            location.href = "tel:010-2274-0450";
           }}
         >
           010-2274-0450
@@ -20,7 +20,7 @@ const Header = () => {
         <Typography
           sx={styles.tag}
           onClick={() => {
-            window.open("mailto:dltprb11@naver.com");
+            location.href = "mailto:dltprb11@naver.com";
           }}
         >
           dltprb11@naver.com
