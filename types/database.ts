@@ -20,6 +20,7 @@ export interface paths {
           name?: parameters["rowFilter.Skills.name"];
           description?: parameters["rowFilter.Skills.description"];
           favorite?: parameters["rowFilter.Skills.favorite"];
+          id?: parameters["rowFilter.Skills.id"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -74,6 +75,7 @@ export interface paths {
           name?: parameters["rowFilter.Skills.name"];
           description?: parameters["rowFilter.Skills.description"];
           favorite?: parameters["rowFilter.Skills.favorite"];
+          id?: parameters["rowFilter.Skills.id"];
         };
         header: {
           /** Preference */
@@ -92,6 +94,7 @@ export interface paths {
           name?: parameters["rowFilter.Skills.name"];
           description?: parameters["rowFilter.Skills.description"];
           favorite?: parameters["rowFilter.Skills.favorite"];
+          id?: parameters["rowFilter.Skills.id"];
         };
         body: {
           /** Skills */
@@ -511,6 +514,8 @@ export interface definitions {
     description?: string;
     /** Format: boolean */
     favorite?: boolean;
+    /** Format: integer */
+    id?: number;
   };
   Github: {
     /**
@@ -643,6 +648,8 @@ export interface parameters {
   "rowFilter.Skills.description": string;
   /** Format: boolean */
   "rowFilter.Skills.favorite": string;
+  /** Format: integer */
+  "rowFilter.Skills.id": string;
   /** @description Github */
   "body.Github": definitions["Github"];
   /** Format: bigint */

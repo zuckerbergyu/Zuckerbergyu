@@ -7,7 +7,8 @@ export const getSkillList = async (): Promise<
 > => {
   const { data, error } = await supabase
     .from<definitions["Skills"]>("Skills")
-    .select("*");
+    .select("*")
+    .order("id", { ascending: true });
   if (error) {
     return [];
   }

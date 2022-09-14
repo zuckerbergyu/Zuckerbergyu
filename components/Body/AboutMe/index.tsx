@@ -12,8 +12,9 @@ const AboutMe = (): JSX.Element => {
       <SectionTitle title={"자기 소개"} />
       <Box sx={styles.contentsRoot}>
         <Typography sx={styles.simpleAbout}>
-          간단한 자기소개를 쓰는곳입니다.간단한 자기소개글을 쓰는곳입니다.간단한
-          소개글을 쓰는곳입니다.
+          안녕하세요. 4년차 개발자 이세규입니다. 주어진 업무는 반드시
+          완료합니다. 불가능 보단 가능 성을 우선시하는 사람이 되겠습니다.
+          감사합니다.
         </Typography>
         {aboutMe.map((item) => (
           <AboutMeItem item={item} />
