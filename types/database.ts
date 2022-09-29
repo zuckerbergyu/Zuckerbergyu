@@ -204,6 +204,99 @@ export interface paths {
       };
     };
   };
+  "/Interview": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Interview.id"];
+          title?: parameters["rowFilter.Interview.title"];
+          description?: parameters["rowFilter.Interview.description"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["Interview"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** Interview */
+          Interview?: definitions["Interview"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Interview.id"];
+          title?: parameters["rowFilter.Interview.title"];
+          description?: parameters["rowFilter.Interview.description"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.Interview.id"];
+          title?: parameters["rowFilter.Interview.title"];
+          description?: parameters["rowFilter.Interview.description"];
+        };
+        body: {
+          /** Interview */
+          Interview?: definitions["Interview"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/Career": {
     get: {
       parameters: {
@@ -535,6 +628,24 @@ export interface definitions {
      */
     thumbNail?: string;
   };
+  Interview: {
+    /**
+     * Format: bigint
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    id: number;
+    /**
+     * Format: text
+     * @default
+     */
+    title?: string;
+    /**
+     * Format: text
+     * @default
+     */
+    description?: string;
+  };
   Career: {
     /**
      * Format: text
@@ -658,6 +769,14 @@ export interface parameters {
   "rowFilter.Github.link": string;
   /** Format: text */
   "rowFilter.Github.thumbNail": string;
+  /** @description Interview */
+  "body.Interview": definitions["Interview"];
+  /** Format: bigint */
+  "rowFilter.Interview.id": string;
+  /** Format: text */
+  "rowFilter.Interview.title": string;
+  /** Format: text */
+  "rowFilter.Interview.description": string;
   /** @description Career */
   "body.Career": definitions["Career"];
   /** Format: text */

@@ -68,3 +68,18 @@ export const getEducation = async (): Promise<
 };
 export const useGetEducation = () =>
   useQuery(["Education"], () => getEducation());
+
+export const getInterview = async (): Promise<
+  definitions["Interview"][] | null
+> => {
+  const { data, error } = await supabase
+    .from<definitions["Interview"]>("Interview")
+    .select("*")
+    .order("id", { ascending: true });
+  if (error) {
+    return [];
+  }
+  return data;
+};
+export const useGetInterview = () =>
+  useQuery(["Interview"], () => getInterview());

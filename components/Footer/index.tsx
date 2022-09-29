@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 const Footer = () => {
   return (
     <Box sx={styles.root}>
-      <Typography sx={styles.lastEdit}>최종 작성일자 2022.09.13</Typography>
+      <Typography sx={styles.lastEdit}>최종 작성일자 2022.09.29</Typography>
     </Box>
   );
 };

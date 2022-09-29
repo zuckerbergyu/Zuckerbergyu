@@ -5,6 +5,7 @@ import Career from "./Career";
 import Github from "./Github";
 import AboutMe from "./AboutMe";
 import Education from "./Education";
+import InterView from "./Interview";
 
 const Body = () => {
   return (
@@ -14,6 +15,7 @@ const Body = () => {
       <Github />
       <AboutMe />
       <Education />
+      <InterView />
     </Box>
   );
 };

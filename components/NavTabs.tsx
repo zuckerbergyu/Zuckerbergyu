@@ -47,6 +47,7 @@ const NavTabs = (props: LinkTabProps) => {
         <LinkTab label="깃허브" href="Github" />
         <LinkTab label="자기소개" href="AboutMe" />
         <LinkTab label="학력" href="Education" />
+        <LinkTab label="면접" href="Interview" />
       </Tabs>
     </Box>
   );
