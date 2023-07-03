@@ -12,7 +12,7 @@ const Header = () => {
         <Typography
           sx={styles.tag}
           onClick={() => {
-            location.href = "tel:010-2274-0450";
+            location.href = "tel:010-2274-0473";
           }}
         >
           010-2274-0473
