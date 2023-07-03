@@ -15,7 +15,7 @@ const Header = () => {
             location.href = "tel:010-2274-0450";
           }}
         >
-          010-2274-0450
+          010-2274-0473
         </Typography>
         <Typography
           sx={styles.tag}
